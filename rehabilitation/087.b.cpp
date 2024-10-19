@@ -10,16 +10,15 @@ using namespace std;
 #define vv vector<vector<int>>
 
 int main(void){
-    int n; cin >> n;
-    int mx = 0;
-    vector<long> hold(n);
-    for(int i = 0; i < n; i++) cin >> hold[i];
-    for(int i = 0; i < n - 1; i++){
-        for(int j = i + 1; j < n; j++){
-            if(abs(hold[i] - hold[j]) > mx){
-                mx = abs(hold[i] - hold[j]);
+    int a , b ,c , x; cin >> a >> b >> c >> x;
+    int count = 0;
+    for(int i = 0; i <= a; i++){
+        for(int j = 0; j <= b; j++){
+            for(int z = 0; z <= c; z++){
+                int sum = i * 500 + j * 100 + z * 50;
+                if(sum == x)count++;
             }
         }
     }
-    cout << mx << endl;
+    cout << count << endl;
 }
